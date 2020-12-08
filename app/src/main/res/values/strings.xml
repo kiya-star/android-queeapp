@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quee System</string>
+    <string name="username">Enter Username</string>
+    <string name="password">Enter Password</string>
+    <string name="phone">Enter Phone</string>
+    <string name="slogan">Your Customers are ,your life</string>
+    <string name="ourlogo">Quee System</string>
+
+    <string name="code">CO <br></br>DE</string>
+    <string name="verify"> Verification</string>
+
+
+</resources>

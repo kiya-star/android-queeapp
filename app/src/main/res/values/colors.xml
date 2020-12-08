@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundcolor">#f3f3f3</color>
+    <color name="loginbtnbg">#0A0B0A</color>
+    <color name="btntxt">#fff</color>
+    <color name="navy_500">#03A9F4</color>
+    <color name="navy_700">#4CAF50</color>
+    <color name="navy_900">#073042</color>
+    <color name="green_300">#3DDC84</color>
+    <color name="green_500">#00A956</color>
+</resources>
