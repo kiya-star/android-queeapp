@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="backgroundcolor">#f3f3f3</color>
-    <color name="loginbtnbg">#0A0B0A</color>
     <color name="btntxt">#fff</color>
     <color name="navy_500">#03A9F4</color>
-    <color name="navy_700">#4CAF50</color>
+    <color name="navy_700">#2196F3</color>
     <color name="navy_900">#073042</color>
-    <color name="green_300">#3DDC84</color>
-    <color name="green_500">#00A956</color>
+    <color name="green_300">#4CAF50</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="red">#E81809</color>
+    <color name="green">#124E15</color>
+    <color name="yellow">#CDDC39</color>
+    <color name="blue">#0C2093</color>
+    <color name="linkcolor">#CA502B</color>
+    <color name="dashboardBg">#9FD6DD</color>
+    <color name="light_black">#171313</color>
+    <color name="light_black2">#494141</color>
+
+
 </resources>

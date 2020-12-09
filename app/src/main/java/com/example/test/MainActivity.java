@@ -51,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
         logotxt.setAnimation(bottomAnimation);
         slogan.setAnimation(bottomAnimation);
 
+
     new Handler().postDelayed(new Runnable() {
         @Override
         public void run() {
             Intent intent =  new Intent(MainActivity.this , loginSignup.class);
             startActivity(intent);
+            finishAfterTransition();
 //            Pair[] pairs = new Pair[2];
 //            pairs[0] = new Pair<View , String> (logo , "ourlogo");
 //            pairs[1] = new Pair<View , String> (slogan , "ourslogan");

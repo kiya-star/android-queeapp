@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="inputFieldTextSize">14sp</dimen>
+    <dimen name="buttonTextSize">14sp</dimen>
+    <dimen name="headerTextSize">40sp</dimen>
+    <dimen name="inputboxradius">10dp</dimen>
+
+</resources>

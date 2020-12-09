@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/activities_background"
     tools:context=".MainActivity">
-
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
@@ -15,6 +14,7 @@
         android:layout_marginTop="150dp"
         android:elevation="50dp"
         android:src="@drawable/quee"
+        android:contentDescription="@string/logoimage"
         android:transitionName="ourlogo" />
 
     <TextView
@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/bungee"
+        android:fontFamily="@font/ranchers"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/ourlogo"
         android:textColor="#fece2f"
-        android:textSize="50sp"
+        android:textSize="60sp"
         android:transitionName="moto" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logotxt"
-        android:fontFamily="serif"
+        android:fontFamily="@font/ranchers"
         android:gravity="center"
         android:text="@string/slogan"
         android:textSize="20sp"

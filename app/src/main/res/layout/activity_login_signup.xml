@@ -4,86 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/activities_background"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".loginSignup">
 
     <RelativeLayout
+        android:id="@+id/top_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="40dp"
-            android:src="@drawable/quee" />
-        android:transitionName="ourlogo"
-        />
+        <TextView
+            android:id="@+id/loginHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/inconsolata"
+            android:text="@string/login"
+            android:textSize="@dimen/headerTextSize" />
+
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/logo"
-            android:layout_margin="5dp"
-            android:hint="Username"
+            android:layout_below="@+id/loginHeader"
+            android:fontFamily="@font/ranchers"
+            android:hint="@string/email"
             android:importantForAutofill="no"
+            app:boxCornerRadiusBottomEnd="@dimen/inputboxradius"
+            app:boxCornerRadiusBottomStart="@dimen/inputboxradius"
+            app:boxCornerRadiusTopEnd="@dimen/inputboxradius"
+            app:boxCornerRadiusTopStart="@dimen/inputboxradius"
             app:endIconMode="clear_text"
-            app:hintTextColor="#A1A0A0"
-            app:startIconDrawable="@drawable/user">
+            app:hintTextColor="#A1A0A0">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp" />
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="5dp"
+                android:textColorHint="@color/light_black"
+                android:textSize="@dimen/inputFieldTextSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Password"
+            android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/username"
-            android:layout_margin="5dp"
-            android:hint="Password"
+            android:layout_below="@+id/email"
+            android:fontFamily="@font/ranchers"
+            android:hint="@string/password"
             android:importantForAutofill="no"
-            android:transitionName="ourslogan"
-            app:endIconMode="password_toggle"
-            app:hintTextColor="#A1A0A0"
-            app:startIconDrawable="@drawable/security">
+            app:boxCornerRadiusBottomEnd="@dimen/inputboxradius"
+            app:boxCornerRadiusBottomStart="@dimen/inputboxradius"
+            app:boxCornerRadiusTopEnd="@dimen/inputboxradius"
+            app:boxCornerRadiusTopStart="@dimen/inputboxradius"
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
+            app:counterTextColor="@color/light_black"
+            app:endIconMode="clear_text"
+            app:hintTextColor="#A1A0A0">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp" />
+                android:drawableStart="@drawable/pass"
+                android:drawablePadding="5dp"
+                android:inputType="text"
+                android:textSize="@dimen/inputFieldTextSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Password"
+            android:layout_below="@+id/password"
             android:layout_margin="5dp"
+            android:fontFamily="@font/antic"
             android:onClick="login"
             android:padding="15dp"
-            android:text="SignIn"></com.google.android.material.button.MaterialButton>
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textSize="@dimen/buttonTextSize"
+            app:cornerRadius="8dp" />
 
-        <Button
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/ranchers"
+            android:includeFontPadding="false"
+            android:onClick="forgotPassword"
+            android:paddingStart="20dp"
+            android:text="@string/forgotpass"
+            android:textAllCaps="false"
+            android:textSize="@dimen/inputFieldTextSize" />
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/registerlink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/login"
-            android:layout_centerHorizontal="true"
-            android:background="#00000000"
-            android:fontFamily="@font/bungee"
-            android:onClick="newUserregister"
-            android:text="Don't have an account"
-            android:textColor="#fece2f"
-            android:textSize="15sp" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:checked="true"
+            android:fontFamily="@font/antic"
+            android:includeFontPadding="false"
+            android:paddingEnd="20dp"
+            android:text="@string/rememberme"
+            android:textAllCaps="false"
+            android:textColorLink="@color/light_black2"
+            android:textSize="@dimen/inputFieldTextSize" />
 
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgotpassword"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/pass" />
+
+        <ImageView
+            android:id="@+id/gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgotpassword"
+            android:layout_marginTop="150dp"
+            android:layout_toRightOf="@+id/facebook"
+            android:src="@drawable/pass" />
+
+        <ImageView
+            android:id="@+id/linkdin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgotpassword"
+            android:layout_marginTop="150dp"
+            android:layout_toRightOf="@+id/gmail"
+            android:src="@drawable/pass" />
+
+        <TextView
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/facebook"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/ranchers"
+            android:text="@string/create1"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/account2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/facebook"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/account"
+            android:fontFamily="@font/ranchers"
+            android:onClick="newUserregister"
+            android:layout_marginStart="5dp"
+            android:text="@string/create2"
+            android:textColor="#fece2f"
+            android:textSize="14dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="50dp">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/progressbar_bg"
+                android:elevation="10dp"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
     </RelativeLayout>
 
 </ScrollView>

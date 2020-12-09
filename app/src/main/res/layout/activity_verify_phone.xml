@@ -41,7 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/verifytxt"
             android:layout_centerHorizontal="true"
-            android:text="Enter code sent To Your Phone"
             android:textSize="20sp" />
 
         <com.chaos.view.PinView
@@ -60,13 +59,16 @@
             app:itemHeight="50dp"
             app:itemWidth="50dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/verifybtn"
-            style="@style/verifyBtnStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/otp"
-            android:layout_marginTop="20dp"
-            android:text="Verify" />
+            android:layout_below="@+id/otp"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:text="Verify"
+            android:textAllCaps="false"
+            android:textSize="@dimen/buttonTextSize"
+            app:cornerRadius="8dp" />
     </RelativeLayout>
 </ScrollView>

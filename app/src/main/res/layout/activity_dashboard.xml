@@ -5,29 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/activities_background"
+    android:id="@+id/container"
     tools:context=".Dashboard">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/bottomMenu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="@font/bungee"
-        android:includeFontPadding="false"
-        android:text="Dashboard"
-        android:textSize="50sp" />
-
-    <TextView
-        android:id="@+id/subheader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/header"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="@font/antic"
-        android:includeFontPadding="false"
-        android:text="simple modern and fansy design"
-        android:textSize="20sp" />
+        app:cnb_menuResource="@menu/bottom_menu"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_menu_background"
+        app:cnb_unselectedColor="#272222"
+        android:elevation="8dp"
+        app:cnb_orientationMode="horizontal"
+        android:layout_margin="25dp"
+        app:cnb_radius="8dp"/>
 
 </RelativeLayout>

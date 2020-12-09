@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chaos.view.PinView;
@@ -28,13 +29,22 @@ public class verifyPhone extends AppCompatActivity {
 
     private PinView userOtp;
     private String CodeFromSystem;
+    private TextView message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_phone);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        message = findViewById(R.id.message);
 
+//        String phoneNumber = getIntent().getStringExtra("NUMBER_TO_VERIFY");
+//        String CodesentTo = "we sent 6 digit code to *******" + phoneNumber + "number";
+//        message.setText(CodesentTo);
+
+
+
+        /*
         userOtp = findViewById(R.id.otp);
         //get phone number
         String phoneNumber = getIntent().getStringExtra("number");
@@ -111,5 +121,6 @@ public class verifyPhone extends AppCompatActivity {
         if (!code.isEmpty()) {
             verifyCode(code);
         }
+*/
     }
 }
