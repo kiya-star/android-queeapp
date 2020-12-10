@@ -38,16 +38,13 @@ public class verifyPhone extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         message = findViewById(R.id.message);
 
-//        String phoneNumber = getIntent().getStringExtra("NUMBER_TO_VERIFY");
-//        String CodesentTo = "we sent 6 digit code to *******" + phoneNumber + "number";
-//        message.setText(CodesentTo);
+        String phoneNumber = getIntent().getStringExtra("NUMBER_TO_VERIFY");
+        String CodesentTo = "we sent 6 digit code to *******" + phoneNumber + "number";
+        message.setText(CodesentTo);
 
-
-
-        /*
         userOtp = findViewById(R.id.otp);
         //get phone number
-        String phoneNumber = getIntent().getStringExtra("number");
+        phoneNumber = getIntent().getStringExtra("number");
         verifyPhoneNumber(phoneNumber);
     }
 
@@ -83,7 +80,8 @@ public class verifyPhone extends AppCompatActivity {
 
                 @Override
                 public void onVerificationFailed(@NonNull FirebaseException e) {
-                    //show toast otp faild
+                    //something wrong
+                    Toast.makeText(getApplicationContext() , "Something went wrong" ,Toast.LENGTH_LONG).show();
                 }
             };
 
@@ -121,6 +119,6 @@ public class verifyPhone extends AppCompatActivity {
         if (!code.isEmpty()) {
             verifyCode(code);
         }
-*/
+
     }
 }

@@ -11,11 +11,12 @@
     <string name="createaccountsubheader">Account Type</string>
     <string name="privateuser">Private</string>
     <string name="org">Company</string>
-    <string name="discription">Company Discription</string>
+    <string name="discription">Company Discription (optional)</string>
     <string name="forgotpass">Forgot Password ?</string>
     <string name="rememberme">Remember me</string>
     <string name="backtologin">close</string>
     <string name="logoimage">logo image</string>
+    <string name="social">loginoptions</string>
 
 
     <string name="slogan">wherever you are , its possible !!</string>

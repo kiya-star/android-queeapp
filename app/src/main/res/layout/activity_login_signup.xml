@@ -102,7 +102,7 @@
             android:fontFamily="@font/ranchers"
             android:includeFontPadding="false"
             android:onClick="forgotPassword"
-            android:paddingStart="20dp"
+            android:layout_marginStart="20dp"
             android:text="@string/forgotpass"
             android:textAllCaps="false"
             android:textSize="@dimen/inputFieldTextSize" />
@@ -118,7 +118,7 @@
             android:checked="true"
             android:fontFamily="@font/antic"
             android:includeFontPadding="false"
-            android:paddingEnd="20dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/rememberme"
             android:textAllCaps="false"
             android:textColorLink="@color/light_black2"
@@ -127,30 +127,35 @@
 
         <ImageView
             android:id="@+id/facebook"
+            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/forgotpassword"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="150dp"
-            android:src="@drawable/pass" />
+            android:src="@drawable/fb" />
 
         <ImageView
             android:id="@+id/gmail"
+            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/forgotpassword"
             android:layout_marginTop="150dp"
-            android:layout_toRightOf="@+id/facebook"
-            android:src="@drawable/pass" />
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/facebook"
+            android:src="@drawable/google" />
 
         <ImageView
             android:id="@+id/linkdin"
+            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/forgotpassword"
             android:layout_marginTop="150dp"
-            android:layout_toRightOf="@+id/gmail"
-            android:src="@drawable/pass" />
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/gmail"
+            android:src="@drawable/linkedin" />
 
         <TextView
             android:id="@+id/account"
@@ -161,21 +166,21 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/ranchers"
             android:text="@string/create1"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/account2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/facebook"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
-            android:layout_toRightOf="@+id/account"
+            android:layout_toEndOf="@+id/account"
             android:fontFamily="@font/ranchers"
             android:onClick="newUserregister"
-            android:layout_marginStart="5dp"
             android:text="@string/create2"
             android:textColor="#fece2f"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"

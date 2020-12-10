@@ -19,11 +19,18 @@ import com.hbb20.CountryCodePicker;
 
 public class signup extends AppCompatActivity {
 
+    private TextInputLayout userEnteredPhone;
+    private CountryCodePicker countryCodePicker;
+    public String NUMBER_TO_VERIFY = "0";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        userEnteredPhone = findViewById(R.id.phone);
+        countryCodePicker = findViewById(R.id.country);
     }
 
     public void backtologin(View view) {
@@ -32,11 +39,64 @@ public class signup extends AppCompatActivity {
         finish();
     }
 
+    public void checkPhoneNumber(View view) {
 
-    public void nextpage(View view) {
-        Intent intent = new Intent(getApplicationContext(), signup_next_page.class);
-        startActivity(intent);
+        //Check if connected to the internet
+//        if (!isConnected(this)) {
+//            showDialog();
+//        } else {
+            String userEnteredPhonenumber = userEnteredPhone.getEditText().getText().toString();
+            String userPhoneNumber = countryCodePicker.getFullNumberWithPlus() + userEnteredPhonenumber;
 
+      //  Intent intent = new Intent(Intent.ACTION_SEND);
+       // startActivity(intent);
+           // intent.putExtra(NUMBER_TO_VERIFY, userPhoneNumber);
+
+            Toast.makeText(getApplicationContext(), userPhoneNumber, Toast.LENGTH_LONG).show();
+
+       // }
 
     }
+
+    private boolean isConnected(signup context) {
+        int[] networkTypes = {ConnectivityManager.TYPE_MOBILE,
+                ConnectivityManager.TYPE_WIFI};
+        try {
+            ConnectivityManager connectivityManager =
+                    (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            for (int networkType : networkTypes) {
+                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+                if (activeNetworkInfo != null &&
+                        activeNetworkInfo.getType() == networkType)
+                    return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please, check your internet connection")
+                .setCancelable(false)
+                .setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent((Settings.ACTION_WIFI_SETTINGS)));
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(getApplicationContext(), loginSignup.class));
+                        finish();
+                    }
+                });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
 }
