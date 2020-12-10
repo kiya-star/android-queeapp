@@ -39,8 +39,6 @@
             android:layout_below="@id/header"
             android:focusable="true"
             android:padding="5dp"
-            app:ccp_areaCodeDetectedCountry="true"
-            app:ccp_autoDetectCountry="true"
             app:ccp_flagBorderColor="#000"
             app:ccp_showFlag="true"
             app:ccp_showFullName="true"

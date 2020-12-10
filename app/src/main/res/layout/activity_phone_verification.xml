@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
-    tools:context=".verifyPhone">
+    tools:context=".phoneVerification">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/verifytxt"
             android:layout_centerHorizontal="true"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <com.chaos.view.PinView
-            android:id="@+id/otp"
+            android:id="@+id/pinViewFiled"
             style="@style/PinWidget.PinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,10 +64,11 @@
             android:id="@+id/verifybtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/otp"
+            android:layout_below="@+id/pinViewFiled"
             android:layout_margin="5dp"
             android:padding="15dp"
-            android:text="Verify"
+            android:text="@string/check"
+            android:onClick="otplogin"
             android:textAllCaps="false"
             android:textSize="@dimen/buttonTextSize"
             app:cornerRadius="8dp" />

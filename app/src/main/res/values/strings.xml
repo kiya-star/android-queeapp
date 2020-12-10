@@ -30,6 +30,7 @@
 
     <string name="code">CO <br></br>DE</string>
     <string name="verify"> Verification</string>
+    <string name="check"> verify</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

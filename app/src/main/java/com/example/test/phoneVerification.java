@@ -1,10 +1,10 @@
 package com.example.test;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -19,45 +19,48 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthSettings;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class verifyPhone extends AppCompatActivity {
+public class phoneVerification extends AppCompatActivity {
 
-    private PinView userOtp;
-    private String CodeFromSystem;
+    private PinView pinViewFiled;
+    private String codeFromSystem;
     private TextView message;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_phone);
+        setContentView(R.layout.activity_phone_verification);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        mAuth = FirebaseAuth.getInstance();
+
         message = findViewById(R.id.message);
+        pinViewFiled = findViewById(R.id.pinViewFiled);
 
-        String phoneNumber = getIntent().getStringExtra("NUMBER_TO_VERIFY");
-        String CodesentTo = "we sent 6 digit code to *******" + phoneNumber + "number";
+        Intent intent = getIntent();
+        String phoneNumber = intent.getStringExtra(signup.EXTRA_MESSAGE);
+        String CodesentTo = "we sent 6 digit code to ***** " + phoneNumber + " number";
         message.setText(CodesentTo);
-
-        userOtp = findViewById(R.id.otp);
-        //get phone number
-        phoneNumber = getIntent().getStringExtra("number");
-        verifyPhoneNumber(phoneNumber);
+        //verify phone number
+        sendVerificationCode(phoneNumber);
     }
 
-    private void verifyPhoneNumber(String phoneNumber) {
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(firebaseAuth)
-                        .setPhoneNumber(phoneNumber)
-                        .setTimeout(60L, TimeUnit.SECONDS)
-                        .setActivity((Activity) TaskExecutors.MAIN_THREAD)
-                        .setCallbacks(mCallbacks)
-                        .build();
+    private void sendVerificationCode(String phoneNumber) {
 
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(phoneNumber)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this)                 // Activity (for callback binding)
+                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                        .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
@@ -66,14 +69,14 @@ public class verifyPhone extends AppCompatActivity {
                 @Override
                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                     super.onCodeSent(s, forceResendingToken);
-                    CodeFromSystem = s;
+                    codeFromSystem = s;
                 }
 
                 @Override
                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                     String code = phoneAuthCredential.getSmsCode();
                     if (code != null) {
-                        userOtp.setText(code);
+                        pinViewFiled.setText(code);
                         verifyCode(code);
                     }
                 }
@@ -81,12 +84,12 @@ public class verifyPhone extends AppCompatActivity {
                 @Override
                 public void onVerificationFailed(@NonNull FirebaseException e) {
                     //something wrong
-                    Toast.makeText(getApplicationContext() , "Something went wrong" ,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
                 }
             };
 
     private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(CodeFromSystem, code);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeFromSystem, code);
         signInWithPhoneAuthCredential(credential);
     }
 
@@ -99,14 +102,14 @@ public class verifyPhone extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             //varification completed
 
-                            Toast.makeText(getApplicationContext() , "Good Job ! verified",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Good Job ! verified", Toast.LENGTH_LONG).show();
 
                         } else {
 
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                                 //show toast
-                                Toast.makeText(getApplicationContext() , "I'm sorry verified",Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "I'm sorry verified", Toast.LENGTH_LONG).show();
 
                             }
                         }
@@ -115,7 +118,7 @@ public class verifyPhone extends AppCompatActivity {
     }
 
     public void otplogin(View view) {
-        String code = userOtp.getText().toString();
+        String code = pinViewFiled.getText().toString();
         if (!code.isEmpty()) {
             verifyCode(code);
         }

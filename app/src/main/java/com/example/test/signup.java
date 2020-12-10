@@ -22,6 +22,7 @@ public class signup extends AppCompatActivity {
     private TextInputLayout userEnteredPhone;
     private CountryCodePicker countryCodePicker;
     public String NUMBER_TO_VERIFY = "0";
+    public final static String EXTRA_MESSAGE = "com.example.test.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +46,14 @@ public class signup extends AppCompatActivity {
 //        if (!isConnected(this)) {
 //            showDialog();
 //        } else {
-            String userEnteredPhonenumber = userEnteredPhone.getEditText().getText().toString();
-            String userPhoneNumber = countryCodePicker.getFullNumberWithPlus() + userEnteredPhonenumber;
+        String userEnteredPhonenumber = userEnteredPhone.getEditText().getText().toString();
+        String userPhoneNumber = "+" + countryCodePicker.getSelectedCountryCodeAsInt()+ userEnteredPhonenumber;
 
-      //  Intent intent = new Intent(Intent.ACTION_SEND);
-       // startActivity(intent);
-           // intent.putExtra(NUMBER_TO_VERIFY, userPhoneNumber);
+        Intent intent = new Intent(getApplicationContext(), phoneVerification.class);
+        intent.putExtra(EXTRA_MESSAGE, userPhoneNumber);
+        startActivity(intent);
 
-            Toast.makeText(getApplicationContext(), userPhoneNumber, Toast.LENGTH_LONG).show();
-
-       // }
+        // }
 
     }
 
