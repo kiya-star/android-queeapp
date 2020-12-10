@@ -12,9 +12,18 @@
         android:roundIcon="@drawable/biyc"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
-        <activity android:name=".signup" android:windowSoftInputMode="stateAlwaysHidden"></activity>
-        <activity android:name=".loginSignup" android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".verifyPhone" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".signup_next_page"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".signup"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".loginSignup"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".verifyPhone"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
             <intent-filter>

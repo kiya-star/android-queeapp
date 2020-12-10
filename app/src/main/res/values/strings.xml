@@ -8,6 +8,10 @@
     <string name="phone">Phone</string>
     <string name="fullname">Full name</string>
     <string name="createaccountHeader">Create Account</string>
+    <string name="createaccountsubheader">Account Type</string>
+    <string name="privateuser">Private</string>
+    <string name="org">Company</string>
+    <string name="discription">Company Discription</string>
     <string name="forgotpass">Forgot Password ?</string>
     <string name="rememberme">Remember me</string>
     <string name="backtologin">close</string>
@@ -17,6 +21,7 @@
     <string name="slogan">wherever you are , its possible !!</string>
     <string name="by">Antic Design</string>
     <string name="register">Register</string>
+    <string name="next">Next</string>
     <string name="login">Login</string>
     <string name="create1">Do not have account ?</string>
     <string name="create2"> Create Account Here.</string>

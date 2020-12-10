@@ -18,6 +18,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/ranchers"
             android:gravity="center"
+            android:textFontWeight="4000"
             android:text="@string/code"
             android:textSize="160sp" />
 

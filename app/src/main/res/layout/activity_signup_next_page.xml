@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activities_background"
+    tools:context=".signup_next_page"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="periviousPage"
+            android:contentDescription="@string/backtologin"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/backbtn"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/rakkas"
+            android:text="@string/createaccountHeader"
+            android:textSize="50sp" />
+        <TextView
+            android:id="@+id/subheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_marginTop="5dp"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/antic"
+            android:text="@string/createaccountsubheader"
+            android:textSize="20sp" />
+
+      <RadioGroup
+          android:id="@+id/radiogroup"
+          android:layout_below="@+id/subheader"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <com.google.android.material.radiobutton.MaterialRadioButton
+              android:id="@+id/privateuser"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/antic"
+              android:includeFontPadding="false"
+              android:text="@string/privateuser"
+              android:textAllCaps="false"
+              android:textColorLink="@color/light_black2"
+              android:textSize="@dimen/inputFieldTextSize" />
+          <com.google.android.material.radiobutton.MaterialRadioButton
+              android:id="@+id/company"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/privateuser"
+              android:fontFamily="@font/antic"
+              android:includeFontPadding="false"
+              android:text="@string/org"
+              android:textAllCaps="false"
+              android:textColorLink="@color/light_black2"
+              android:textSize="@dimen/inputFieldTextSize" />
+      </RadioGroup>
+
+        <EditText
+            android:id="@+id/discription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:layout_below="@+id/radiogroup"
+            android:layout_margin="5dp"
+            android:hint="@string/discription"
+            android:importantForAutofill="no"
+            app:endIconMode="clear_text"
+            app:hintTextColor="#A1A0A0"/>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discription"
+            android:layout_marginTop="20dp"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:onClick="checkPhoneNumber"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textSize="@dimen/buttonTextSize"
+            app:cornerRadius="8dp" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

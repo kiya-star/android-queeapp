@@ -173,14 +173,14 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login"
+            android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/password"
             android:layout_margin="5dp"
-            android:onClick="checkPhoneNumber"
+            android:onClick="nextpage"
             android:padding="15dp"
-            android:text="@string/register"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textSize="@dimen/buttonTextSize"
             app:cornerRadius="8dp" />
