@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loginHeader"
-            android:fontFamily="@font/ranchers"
+            android:fontFamily="serif"
             android:hint="@string/email"
             android:importantForAutofill="no"
             app:boxCornerRadiusBottomEnd="@dimen/inputboxradius"
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/email"
-            android:fontFamily="@font/ranchers"
+            android:fontFamily="serif"
             android:hint="@string/password"
             android:importantForAutofill="no"
             app:boxCornerRadiusBottomEnd="@dimen/inputboxradius"
@@ -92,69 +92,93 @@
             android:textSize="@dimen/buttonTextSize"
             app:cornerRadius="8dp" />
 
-        <TextView
-            android:id="@+id/forgotpassword"
-            android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:id="@+id/remembersec"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/login"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/ranchers"
-            android:includeFontPadding="false"
-            android:onClick="forgotPassword"
-            android:layout_marginStart="20dp"
-            android:text="@string/forgotpass"
-            android:textAllCaps="false"
-            android:textSize="@dimen/inputFieldTextSize" />
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/forgotpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                android:onClick="forgotPassword"
+                android:text="@string/forgotpass"
+                android:textAllCaps="false"
+                android:textSize="@dimen/inputFieldTextSize" />
 
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/registerlink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/login"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:checked="true"
-            android:fontFamily="@font/antic"
-            android:includeFontPadding="false"
-            android:layout_marginEnd="20dp"
-            android:text="@string/rememberme"
-            android:textAllCaps="false"
-            android:textColorLink="@color/light_black2"
-            android:textSize="@dimen/inputFieldTextSize" />
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/remecheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+               android:layout_toEndOf="@+id/forgotpassword"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:checked="true"
+                android:fontFamily="@font/ranchers"
+                android:includeFontPadding="false"
+                android:textAllCaps="false"
+                android:textColorLink="@color/light_black2"
+                android:textSize="@dimen/inputFieldTextSize" />
+
+            <TextView
+                android:id="@+id/placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="-30dp"
+                android:layout_toEndOf="@+id/remecheckbox"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                android:text="@string/rememberme"
+                android:textAllCaps="false"
+                android:textSize="@dimen/inputFieldTextSize" />
+
+
+        </RelativeLayout>
 
 
         <ImageView
             android:id="@+id/facebook"
-            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/forgotpassword"
+            android:layout_below="@+id/remembersec"
             android:layout_marginStart="150dp"
             android:layout_marginTop="150dp"
+            android:contentDescription="@string/social"
             android:src="@drawable/fb" />
 
         <ImageView
             android:id="@+id/gmail"
-            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/forgotpassword"
-            android:layout_marginTop="150dp"
+            android:layout_below="@+id/remembersec"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="150dp"
             android:layout_toEndOf="@+id/facebook"
+            android:contentDescription="@string/social"
             android:src="@drawable/google" />
 
         <ImageView
             android:id="@+id/linkdin"
-            android:contentDescription="@string/social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/forgotpassword"
-            android:layout_marginTop="150dp"
+            android:layout_below="@+id/remembersec"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="150dp"
             android:layout_toEndOf="@+id/gmail"
+            android:contentDescription="@string/social"
             android:src="@drawable/linkedin" />
 
         <TextView
@@ -162,9 +186,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/facebook"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/ranchers"
+            android:fontFamily="serif"
+            android:textStyle="bold"
             android:text="@string/create1"
             android:textSize="14sp" />
 
@@ -176,7 +201,8 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/account"
-            android:fontFamily="@font/ranchers"
+            android:fontFamily="serif"
+            android:textStyle="bold"
             android:onClick="newUserregister"
             android:text="@string/create2"
             android:textColor="#fece2f"

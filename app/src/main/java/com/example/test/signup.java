@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -19,7 +21,9 @@ import com.hbb20.CountryCodePicker;
 
 public class signup extends AppCompatActivity {
 
-    private TextInputLayout userEnteredPhone;
+    private TextInputLayout userEnteredPhone ,email,password;
+    private RadioGroup radioGroup;
+    private EditText company;
     private CountryCodePicker countryCodePicker;
     public String NUMBER_TO_VERIFY = "0";
     public final static String EXTRA_MESSAGE = "com.example.test.MESSAGE";
@@ -50,6 +54,7 @@ public class signup extends AppCompatActivity {
         String userPhoneNumber = "+" + countryCodePicker.getSelectedCountryCodeAsInt()+ userEnteredPhonenumber;
 
         Intent intent = new Intent(getApplicationContext(), phoneVerification.class);
+       // Bundle extras = new Bundle();
         intent.putExtra(EXTRA_MESSAGE, userPhoneNumber);
         startActivity(intent);
 

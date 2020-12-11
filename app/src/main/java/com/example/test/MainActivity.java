@@ -24,8 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 //    private Button loginbtn;
 //    private TextInputLayout username, password,phone;
-//    private FirebaseDatabase database;
-//    private DatabaseReference myRef;
+
     private  static int SPLASH_SCREEN_TIME = 6000;
     private Animation topAnimation , bottomAnimation;
     private ImageView logo;
@@ -68,16 +67,4 @@ public class MainActivity extends AppCompatActivity {
         }
     },SPLASH_SCREEN_TIME);
     }
-//        public void register(View view) {
-//
-//        String uname = username.getEditText().getText().toString();
-//        String passwd = password.getEditText().getText().toString();
-//        String uphone = phone.getEditText().getText().toString();
-//        database = FirebaseDatabase.getInstance();
-//        myRef = database.getReference("foods");
-//        FoodsHelperClass foodsHelperClass = new FoodsHelperClass(uname, passwd,uphone);
-//        myRef.child(uphone).setValue(foodsHelperClass);
-//        Toast.makeText(getApplication(), uname + "&" + passwd + " added", Toast.LENGTH_LONG).show();
-//
-//    }
 }
